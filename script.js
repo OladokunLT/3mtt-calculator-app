@@ -94,6 +94,19 @@ function appendDecimal() {
 }
 
 // Event Listeners
+document.querySelectorAll("button").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.style.transform = "scale(0.95)";
+    btn.style.backgroundColor = "#c2c2c2";
+    setTimeout(() => {
+      btn.style.transform = "scale(1)";
+    }, 100);
+    setTimeout(() => {
+      btn.style.backgroundColor = "";
+    }, 100);
+  });
+});
+
 document.querySelectorAll(".number").forEach((button) => {
   button.addEventListener("click", () => appendNumber(button.textContent));
 });
